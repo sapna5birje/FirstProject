@@ -1,0 +1,24 @@
+<!-- {{employeedata}} -->
+
+<table border="1">
+{% for n in employeedata%}
+<tr>
+<td>{{ n.FirstName}}</td>
+<td>{{ n.LastName }}</td>
+<td>{{ n.EmailAddress }}</td>
+<td>{{ n.Date }}</td>
+<td>{{ n.Address }}</td>
+<td><a href="update/{{ n.id }}">Update</a></td>
+</tr>
+{%endfor%}
+</table>
+
+<a href="{% url 'Add' %}">Add Member</a>
+
+<form action="/Delete/" method="post">
+	{% csrf_token %}
+    <label for="ID">Delete the item </label>
+    <input id="ID" type="number" name="ID">
+    
+    <br><input type="submit" value="OK">
+</form>

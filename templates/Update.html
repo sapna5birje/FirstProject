@@ -1,0 +1,18 @@
+<h1>Update member</h1>
+
+<form action="updaterecord/{{ employeedata.id }}" method="post">
+{% csrf_token %}
+First Name:<br>
+<input name="first" value="{{ employeedata.FirstName }}">
+<br>
+Last Name:<br>
+<input name="last" value="{{ employeedata.LastName }}">
+<br><label for="EmailAddress">Your EmailAddress: </label>
+<input id="EmailAddress" type="text" name="EmailAddress" value="{{ employeedata.EmailAddress }}">
+<br><label for="Date">Date: </label>
+<input id="Date" type="text" name="Date" value="{{ employeedata.Date }}">
+<br><label for="Address">Address: </label>
+<input id="Address" type="text" name="Address" value="{{ employeedata.Address }}">
+<br><br>
+<input type="submit" value="Submit">
+</form>
