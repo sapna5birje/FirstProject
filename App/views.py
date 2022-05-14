@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from App.models import *
 
 def index(request):
+    '''checking branch'''
 
     employee=Employees.objects.all()
     for n in employee:
